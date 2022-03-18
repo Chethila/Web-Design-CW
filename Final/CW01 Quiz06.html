@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Coda&display=swap" rel="stylesheet">
+    
+    <style> 
+        body {                                                 /*body css*/
+            background-image: url(HMlWrk.jpg);
+            background-repeat: no-repeat;
+            background-size: 1550px 750px;
+            margin: auto;
+        }
+        
+        #frame001 {                                            /*quiz frame id css*/
+            margin: auto;
+            height: 400px;
+            width: 400px;
+            background-color:lightcyan;
+            border: 5px solid darkblue;
+            /* margin: 4px; */
+            padding: 4px;
+            border-radius: 10px;
+            opacity: 0.7;
+            text-align: center;
+            
+        }
+
+        #center001 {
+            text-align: center;
+            color: black;
+        }
+
+        .buttons002 {                                           /*start button css*/
+            background-color: maroon;
+            color: white;
+            width: 70px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .buttons002:hover {
+            background-color: red;
+            color: black;
+            transition: 0.5s;
+        }
+       
+        .rules {                                                /*css for rules*/
+            color: maroon;
+            text-align: left;
+        }
+        .logo {                                                 /*logo positioning*/       
+            margin-top: -23px;
+        }
+        .navbar{                                                /*navigation bar positioning*/
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            line-height: -50px;
+            color: green;
+        }
+        .navlist {
+            overflow: hidden;
+            background-color: black;
+            padding: 15px 0px 15px 0px;
+            flex: 1;
+            text-align: right;
+            margin-top:-51px ;
+            margin-right:-20px ;
+            margin-left: 0px;
+        }
+        .navlist a {
+            float: left;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            font-family: 'Coda', cursive;
+            letter-spacing: 2.5px;
+            font-size: 14px;
+            margin: 0;
+            border: 3px solid white transparent;
+            border-radius:  5px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .navlist a:hover {
+            background-color: beige;
+            color: black;
+            transition: 0.7s;
+        }
+        .button :hover {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>                                                    <!--creating the navigation bar-->
+    <div class="navbar">
+        <div class="logo">
+            <img src="nfl.png" alt="nfl" width="80px">
+        </div>
+        <div class="navlist">
+                <a href=""><b>Home</b></a>
+                <a href=""><b>Shop</b></a>
+                <a href=""><b>Quiz</b></a>
+                <a href=""><b>Images</b></a>
+                <a href=""><b>Feedback</b></a>
+                <a href=""><b>Site Map</b></a>
+                <a href=""><b>About Us</b></a>
+    
+        </div>
+    </div>
+    <div id="frame001">                                       <!--creating the quiz box-->
+        <div id="center001">
+            <h2 style="color: black; font-style:italic;"><b>Quiz Mania - NFL</b></h2>
+            <text style="color:mediumvioletred;">Time Remaining(seconds): <text id="time001">60 </text></text>
+            <hr/>
+            <text style="color:green;">Time Spent(seconds): <text id="time002">00 </text></text>
+            <hr>
+            <div id="disappear001">
+                <span style="color: red; font-family:Arial, Helvetica, sans-serif;"><b>Rules & Regulations</b></span>  <br>
+                <ul class="rules">                             <!--implimenting the rules-->
+                    <li>The Quiz cannot be Repeated.</li>
+                    <li>The Time Limit is 60 seconds.</li>
+                    <li>There will be 10 Questions.</li>
+                    <li>The Score will be displayed at the End.</li>
+                    <li>GOOD LUCK!</li>
+                </ul>
+                <button class="buttons002" onclick="begin001()">Start</button>           <!--the start button creation-->
+            </div>                                             <!--inisialising the paragraph id and the structure-->
+            <p id="message001"></p>
+            <p id="options001"></p>
+            <p id="click001"></p>
+            <p id="comment001"></p>
+            <p id="answer001"></p>
+        </div>
+    </div><br><br><br><br><br><br><br><br>
+    <a href="Developer.html" class="button" target="blank" style="color: khaki;">Developer</a>
+    
+
+    <script>
+        //Questions
+        var question001 = ["01.	When was the NFL founded?"];
+        var choices001 = ["<input onclick=correct001() name=button001 type=radio /> 1920 <br/> <input onclick=incorrect001() name=button001 type=radio /> 1925 <br/> <input onclick=incorrect001() name=button001 type=radio /> 1930 <br/> <input onclick=incorrect001() name=button001 type=radio /> 1935<br/>"];
+
+        var question002 = ["02.	How many teams are in the National Football Conference?"]
+        var choices002 = ["<input onclick=incorrect002() name=button002 type=radio /> 14 <br/> <input onclick=correct002() name=button002 type=radio /> 16<br/> <input onclick=incorrect002() name=button002 type=radio /> 18 <br/> <input onclick=incorrect002() name=button002 type=radio /> 20 <br/>"];
+
+        var question003 = ["03.	Which was the last team in 2008 to go undefeated?"]
+        var choices003 = ["<input onclick=incorrect003() name=button003 type=radio /> New York Giants <br/> <input onclick=correct003() name=button003 type=radio /> Tennessee Titans <br/> <input onclick=incorrect003() name=button003 type=radio /> Cincinnati Bengals <br/> <input onclick=incorrect004() name=button003 type=radio /> Dallas Cowboys <br/>"];
+        
+        var question004 = ["04.	How many years must a player be retired to be eligible for the Pro Football Hall of Fame?"];
+        var choices004 = ["<input onclick=correct004() name=button004 type=radio /> 05 Years <br/> <input onclick=incorrect004() name=button004 type=radio /> 06 Years <br/> <input onclick=incorrect004() name=button004 type=radio /> 07 Years <br/> <input onclick=incorrect004() name=button004 type=radio /> 08 Years<br/>"];
+        
+        var question005 = ["05.	In which city did the 'Pros' play during the 1920s?"];
+        var choices005 = ["<input onclick=incorrect005() name=button005 type=radio /> Baltimore <br/> <input onclick=incorrect005() name=button005 type=radio /> Portland  <br/> <input onclick=incorrect005() name=button005 type=radio /> Chicago <br/> <input onclick=correct005() name=button005 type=radio /> Akron<br/>"];
+
+        var question006 = ["06.	Which non-quarterback was the first to throw more than 10 touchdown passes in his career?"];
+        var choices006 = ["<input onclick=incorrect006() name=button006 type=radio /> Marcus Allen <br/> <input onclick=correct006() name=button006 type=radio /> Frank Gifford <br/> <input onclick=incorrect006() name=button006 type=radio /> Keith Byars <br/> <input onclick=incorrect006() name=button006 type=radio /> Alvin Harper<br/>"];
+
+        var question007 = ["07. What team won the first Super Bowl?"];
+        var choices007 = ["<input onclick=correct007() name=button007 type=radio /> Green Bay Packers <br/> <input onclick=incorrect007() name=button007 type=radio /> Dallas Cowboys <br/> <input onclick=incorrect007() name=button007 type=radio /> New York Jets <br/> <input onclick=incorrect007() name=button007 type=radio /> Buffalo Bills<br/>"];
+        
+        var question008 = ["08.	In their career, who has caught the most touchdown passes from Tom Brady?"];
+        var choices008 = ["<input onclick=correct008() name=button008 type=radio /> Rob Gronkowski <br/> <input onclick=incorrect008() name=button008 type=radio /> Wes Welker <br/> <input onclick=incorrect008() name=button008 type=radio /> Randy Moss <br/> <input onclick=incorrect008() name=button008 type=radio /> Antonio Brown<br/>"];
+
+        var question009 = ["09.	How many time outs does each team get per half?"];
+        var choices009 = ["<input onclick=incorrect009() name=button009 type=radio /> 01 <br/> <input onclick=incorrect009() name=button009 type=radio /> 02 <br/> <input onclick=correct009() name=button009 type=radio /> 03 <br/> <input onclick=incorrect009() name=button009 type=radio /> 04<br/>"];
+        
+        var question010 = ["10.	Which of these is not a real penalty?"];
+        var choices010 = ["<input onclick=incorrect010() name=button010 type=radio /> Neutral zone infraction <br/> <input onclick=incorrect010() name=button010 type=radio /> Horse collar tackle <br/> <input onclick=incorrect010() name=button010 type=radio /> Unnecessary roughness <br/> <input onclick=correct010() name=button010 type=radio /> Pulling the guard<br/>"];
+
+        //variable declaration
+        var a,b,c,d,e,f,g,h,i,j,k = 0;            
+    
+       
+        //calling the Functions
+        function begin001() { 
+            time = 60;
+            time1= 00;
+            alert("Please make sure to Read the Rules & Regulations before entering the QUIZ!")
+            disappear001.innerHTML = "";
+            message001.innerHTML = question001;
+            options001.innerHTML = choices001;
+            click001.innerHTML = "<button onclick=set002()>Submit</button>"
+        }
+        var x = 0;                          //for the purpose of changing the background color.
+
+        function correct001() {             //the method to create the point system.
+            a = 2;
+            x = x + 1;
+        }
+
+        function incorrect001() {
+            a = -1;
+        }
+
+        function set002() {
+            message001.innerHTML = question002;
+            options001.innerHTML = choices002;
+            click001.innerHTML = "<button onclick=set003()>submit</button>"
+        }
+
+        function correct002() {
+            b = 2;
+            x = x + 1;
+        }
+
+        function incorrect002() {
+            b = -1;
+        }
+
+        function set003() {
+            message001.innerHTML = question003;
+            options001.innerHTML = choices003;
+            click001.innerHTML = "<button onclick=set004()>submit</button>"
+        }
+
+        function correct003() {
+            c = 2;
+            x = x + 1;
+        }
+
+        function incorrect003() {
+            c = -1;
+        }
+
+        function set004() {
+            message001.innerHTML = question004;
+            options001.innerHTML = choices004;
+            click001.innerHTML = "<button onclick=set005()>submit</button>"
+        }
+
+        function correct004() {
+            d = 2;
+            x = x + 1;
+        }
+
+        function incorrect004() {
+            d = -1;
+        }
+
+        function set005() {
+            message001.innerHTML = question005;
+            options001.innerHTML = choices005;
+            click001.innerHTML = "<button onclick=set006()>submit</button>"
+        }
+
+        function correct005() {
+            e = 2;
+            x = x + 1;
+        }
+
+        function incorrect005() {
+            e = -1;
+        }
+
+        function set006() {
+            message001.innerHTML = question006;
+            options001.innerHTML = choices006;
+            click001.innerHTML = "<button onclick=set007()>submit</button>"
+        }
+
+        function correct006() {
+            f = 2;
+            x = x + 1;
+        }
+
+        function incorrect006() {
+            f = -1;
+        }
+
+        function set007() {
+            message001.innerHTML = question007;
+            options001.innerHTML = choices007;
+            click001.innerHTML = "<button onclick=set008()>submit</button>"
+        }
+
+        function correct007() {
+            g = 2;
+            x = x + 1;
+        }
+
+        function incorrect007() {
+            g = -1;
+        }
+
+        function set008() {
+            message001.innerHTML = question008;
+            options001.innerHTML = choices008;
+            click001.innerHTML = "<button onclick=set009()>submit</button>"
+        }
+
+        function correct008() {
+            h = 2;
+            x = x + 1;
+        }
+
+        function incorrect008() {
+            h = -1;
+        }
+
+        function set009() {
+            message001.innerHTML = question009;
+            options001.innerHTML = choices009;
+            click001.innerHTML = "<button onclick=set010()>submit</button>"
+        }
+
+        function correct009() {
+            i = 2;
+            x = x + 1;
+        }
+
+        function incorrect009() {
+            i = -1;
+        }
+
+        function set010() {
+            message001.innerHTML = question010;
+            options001.innerHTML = choices010;
+            click001.innerHTML = "<button onclick=result001()>submit</button>"
+        }
+
+        function correct010() {
+            j = 2;
+            x = x + 1;
+        }
+
+        function incorrect010() {
+            j = -1;
+        }
+
+        function result001() {        //result action.
+            k = a + b + c + d + e + f + g + h + i + j;
+            message001.innerHTML = "End of The Quiz!";
+            options001.innerHTML = "";
+            click001.innerHTML = "";
+            comment001.innerHTML = "Your score is:" + k;
+            time = 1;
+            
+            
+        }
+
+        function timer001() {          //timer function.
+            time = time - 1;
+            if (time < 60) {
+                time001.innerHTML = time;
+            }
+            if (time < 1) {            //time out action.
+                window.clearInterval(update);
+                k = a + b + c + d + e + f + g + h + i + j;
+                message001.innerHTML = "End of The Quiz!";
+                options001.innerHTML = "";
+                click001.innerHTML = "";
+                comment001.innerHTML = "Your score is:" + k ;
+                time002.innerHTML = time1;
+            }
+        }
+
+        function timer002() {          //the time user spent to te quiz method.
+            time1 = time1 + 1;
+        }
+        function change_background_color() {                     //changing the background color in order of the points.
+            var change = document.getElementById('frame001');
+            change.style.backgroundcolor='lightcyan';
+            if( x < 5 ) {
+                change.style.backgroundColor="#FFB0B0";
+            }
+            else if( x < 8 ) {
+                change.style.backgroundColor="#FFEC99";
+            }
+            else {
+                change.style.backgroundColor="#B3F1B1";
+            }
+        }
+
+        update = setInterval("timer001()" , 1000);  //1000 miliseconds. for the timer001.
+        update1 = setInterval("timer002()" , 1000);  //1000 miliseconds. for the timer002.
+
+    </script>
+</body>
+</html>

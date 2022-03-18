@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@700&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@500&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Coda&display=swap" rel="stylesheet">
+    <style>
+        body {                               
+            background-image: url(Black_Background-01.jpg);
+        }
+        .our_team {                                /*css for our team part*/
+            text-align: center;
+            background-image: url(329313.jpg);
+            background-repeat: no-repeat;
+            background-size: 1600px 1200px;
+        }
+        .our_team h1 {
+            font-family:'Tourney', cursive;
+            font-size: xxx-large;
+            color:red;
+        }
+        .our_team p {
+            font-family: 'Zen Tokyo Zoo', cursive;
+            font-size: xx-large;
+            color: gold;
+        }
+        .row {                                     /*css for CREW part*/
+            background-image: url(photo-1567095751004-aa51a2690368.jpg);
+            background-repeat: no-repeat;
+            background-size: 1600px;
+        }
+        .column1 {                                 /*positioning the student descriptions*/
+            position: relative;
+            float: left;
+            width: 20%;
+            padding: 33px;
+        }
+        .column2 {
+            position: relative;
+            float: left;
+            width: 20%;
+            padding: 33px;
+        }
+        .column3 {
+            position: relative;
+            float: left;
+            width: 20%;
+            padding: 33px;
+        }
+        .column4 {
+            position: relative;
+            float: left;
+            width: 20%;
+            padding: 31px;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .row h2 {
+            font-family: 'DM Serif Text', serif;
+            text-align: center;
+            font-size: xx-large;
+            color: rgb(204, 110, 66);
+        }
+        
+        .image_text1 {                             /*adding the images of students and positioning*/
+            position: absolute;
+            margin: 100px 33px 55px;
+            top: -66.5px;
+            left: 0px;
+            height: 75%;
+            width: 64%;
+            color: black;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .image_text1 * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+        .image_text1:hover {
+            opacity: 1;
+        }
+        .image_text1:hover * {
+            transform: translateY(0);
+        }
+        .image_text1-blur {
+            backdrop-filter: blur(8px);
+        }
+       
+        .image_text2 {
+            position: absolute;
+            margin: 100px 33px 55px;
+            top: -66.5px;
+            left: 0px;
+            height: 75.5%;
+            width: 64%;
+            color: black;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .image_text2 * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+        .image_text2:hover {
+            opacity: 1;
+        }
+        .image_text2:hover * {
+            transform: translateY(0);
+        }
+        .image_text2-blur {
+            backdrop-filter: blur(8px);
+        }
+       
+        .image_text3 {
+            position: absolute;
+            margin: 100px 33px 55px;
+            top: -66.5px;
+            left: 0px;
+            height: 75.5%;
+            width: 64%;
+            color: black;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .image_text3 * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+        .image_text3:hover {
+            opacity: 1;
+        }
+        .image_text3:hover * {
+            transform: translateY(0);
+        }
+        .image_text3-blur {
+            backdrop-filter: blur(8px);
+        }
+       
+        .image_text4 {
+            position: absolute;
+            margin: 98px 30.5px 55px;
+            top: -68.5px;
+            left: 0px;
+            height: 77%;
+            width: 64%;
+            color: black;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .image_text4 * {
+            transform: translateY(20px);
+            transition: transform 0.25s;
+        }
+        .image_text4:hover {
+            opacity: 1;
+        }
+        .image_text4:hover * {
+            transform: translateY(0);
+        }
+        .image_text4-blur {
+            backdrop-filter: blur(8px);
+        }
+        .logo {                                      /*logo positioning*/       
+            margin-top: -25px;
+        }                                                 
+        .navbar{                                     /*navigation bar positioning*/
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            line-height: -50px;
+            color: green;
+        }
+        .navlist {
+            overflow: hidden;
+            background-color: black;
+            padding: 15px 0px 15px 0px;   
+            flex: 1;
+            text-align: right;
+            margin-top:-62px ;
+            margin-right:-30px ;
+            margin-left: 0px;
+        }
+        .navlist a {
+            float: lefto;
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            text-decoration: none;
+            font-family: 'Coda', cursive;
+            letter-spacing: 2.5px;
+            font-size: 14px;
+            margin: 0;
+            border: 3px solid white transparent;
+            border-radius:  5px;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .navlist a:hover {
+            background-color: beige;
+            color: black;
+            transition: 0.7s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">                               <!--adding the navigation bar-->
+        <div class="logo">
+            <img src="nfl.png" alt="nfl" width="80px">
+        </div>
+        <div class="navlist">
+            <a href=""><b>Home</b></a>
+            <a href=""><b>Shop</b></a>
+            <a href=""><b>Quiz</b></a>
+            <a href=""><b>Images</b></a>
+            <a href=""><b>Feedback</b></a>
+            <a href=""><b>Site Map</b></a>
+            <a href=""><b>About Us</b></a>
+        </div>
+    </div>
+
+    <div class="our_team">                              <!--about our team heading and the description-->
+        <h1>OUR TEAM</h1>
+        <p> We are a group of Software Engineering and <br> 
+            Computer Science undergraduates at Informatics <br>
+            Institute of Technology Colombo. We developed this NFL <br>
+            website for the coursework of the module Web Design and <br>
+            Development</p>
+    </div>
+
+    <div class="row">                                   <!--the crew heading and the student details-->
+        <h2>The Crew</h2>
+        <div class="column1">                           
+            <img class="vanuja" src="2nd WhatsApp Image 2021-07-10 at 7.19.29 PM.jpeg" alt="vanuja" width="78%">
+            <div class="image_text1 image_text1-blur">
+                <div style="font-family:  'Jomhuria', cursive; font-size: 35px; color: darkblue;">Vanuja Jayawardana</div>
+                <div class="image_body1">
+                    <ul>
+                        <li>Developed: Student 1</li>
+                        <li>IIT id: 20191259</li>
+                        <li>UoW id: w1838839</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column2">
+            <img class="nethan" src="WhatsApp Image 2021-07-09 at 10.33.04 AM.jpeg" alt="nethan" width="78%">
+            <div class="image_text2 image_text2-blur">
+                <div style="font-family:  'Jomhuria', cursive; font-size: 35px; color: darkblue;">Nethan Fernando</div>
+                <div class="image_body2">
+                    <ul>
+                        <li>Developed: Student 4</li>
+                        <li>IIT id: 20201008</li>
+                        <li>UoW id: w1839662</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column3">
+            <img class="sathnidu" src="WhatsApp Image 2021-07-10 at 6.34.56 PM.jpeg" alt="sathnidu" width="78%">
+            <div class="image_text3 image_text3-blur">
+                <div style="font-family:  'Jomhuria', cursive; font-size: 35px; color: darkblue;">Sathnidu Weerawardhana</div>
+                <div class="image_body3">
+                    <ul>
+                        <li>Developed: Student 2</li>
+                        <li>IIT id: 20200938</li>
+                        <li>UoW id: w1838919</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="column4">
+            <img class="chethila" src="WhatsApp Image 2021-07-10 at 1.33.41 PM.jpeg" alt="chethila" width="75%">
+            <div class="image_text4 image_text4-blur">
+                <div style="font-family:  'Jomhuria', cursive; font-size: 35px; color: darkblue;">Chethila Mallawaarachchi</div>
+                <div class="image_body4">
+                    <ul>
+                        <li>Developed: Student 3</li>
+                        <li>IIT id: 20200534</li>
+                        <li>UoW id: w1833644</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>                                             <!--adding the page editor link-->
+    <a href="Developer.html" class="button" target="blank" style="color: khaki;">Developer</a>    
+    </div>
+    </div>
+
+</body>
+</html>

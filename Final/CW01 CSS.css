@@ -1,0 +1,38 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    line-height: -50px;
+    color: green;
+}
+.navlist {
+    overflow: hidden;
+    background-color: black;
+    padding: 15px 0px 15px 0px;
+    flex: 1;
+    text-align: right;
+    margin-top:-40px ;
+    margin-right:-20px ;
+    margin-left: 580px;
+}
+.navlist a {
+    float: lefto;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Coda', cursive;
+    letter-spacing: 2.5px;
+    font-size: 14px;
+    margin: 0;
+    border: 3px solid white transparent;
+    border-radius:  5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.navlist a:hover {
+    background-color: beige;
+    color: black;
+    transition: 0.7s;
+}
